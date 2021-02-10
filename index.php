@@ -1,8 +1,8 @@
 <h1> ------- 1 Uzduotis ------- </h1>
 
 <?php
-$name = 'Ian';
-$lName = 'Somerhalder';
+$name = 'Tom';
+$lName = 'Hardy';
 echo "Name: $name <br> LastName: $lName <br>";
 
 if (strlen($name) < strlen($lName)) {
@@ -18,20 +18,37 @@ if (strlen($name) < strlen($lName)) {
 <h1> ------- 2 Uzduotis ------- </h1>
 
 <?php
+$actorsName = 'mads';
+$actorsLastName = 'MIKKELSEN';
 
+echo strtoupper($actorsName) . '<br>';
+echo strtolower($actorsLastName) . '<br>';
 ?>
 
 
 <h1> ------- 3 Uzduotis ------- </h1>
 
 <?php
-//$firstName
-//$lastName
- //$concat = substr($firstName, -3).substr($lastName, -3);
+$vardas = 'Milla';
+$pavarde = 'Jovovich';
+$firstLetters = $vardas[0] . $pavarde[0];
+echo "$vardas $pavarde <br>";
+echo $firstLetters . '<br>';
 ?>
 
 
 <h1> ------- 4 Uzduotis ------- </h1>
+
+<?php
+$acName = 'Alice';
+$acLastName = 'Braga';
+$naujasStringas = substr($acName, 2, 4) . substr($acLastName, 2, 4);
+echo $acName . '<br>' . $acLastName . '<br>';
+echo $naujasStringas . '<br>';
+?>
+
+
+<h1> ------- 5 Uzduotis ------- <h1/>
 
 <?php
 $paris = "An American in Paris";
@@ -41,19 +58,13 @@ echo(str_replace($whatReplace, $replace, $paris)); //ka, kuo pakeisti ir is kur
 ?>
 
 
-<h1> ------- 5 Uzduotis ------- <h1/>
+<h1> ------- 6 Uzduotis ------- <h1/>
 
 <?php
 $american = "An American in Paris";
 $letterCount = substr_count($american, "a");
 $letterCount += substr_count($american, "A");
-?>
-
-
-<h1> ------- 6 Uzduotis ------- <h1/>
-
-<?php
-
+echo $letterCount;
 ?>
 
 
