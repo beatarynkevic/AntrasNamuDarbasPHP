@@ -1,4 +1,4 @@
-<h1> ------- 1 Uzduotis ------- </h1>
+<h3> ------- 1 Uzduotis ------- </h3>
 
 <?php
 $name = 'Tom';
@@ -15,7 +15,7 @@ if (strlen($name) < strlen($lName)) {
 ?>
 
 
-<h1> ------- 2 Uzduotis ------- </h1>
+<h3> ------- 2 Uzduotis ------- </h3>
 
 <?php
 $actorsName = 'mads';
@@ -26,7 +26,7 @@ echo strtolower($actorsLastName) . '<br>';
 ?>
 
 
-<h1> ------- 3 Uzduotis ------- </h1>
+<h3> ------- 3 Uzduotis ------- </h3>
 
 <?php
 $vardas = 'Milla';
@@ -37,7 +37,7 @@ echo $firstLetters . '<br>';
 ?>
 
 
-<h1> ------- 4 Uzduotis ------- </h1>
+<h3> ------- 4 Uzduotis ------- </h3>
 
 <?php
 $acName = 'Alice';
@@ -48,7 +48,7 @@ echo $naujasStringas . '<br>';
 ?>
 
 
-<h1> ------- 5 Uzduotis ------- <h1/>
+<h3> ------- 5 Uzduotis ------- <h3/>
 
 <?php
 $paris = "An American in Paris";
@@ -58,7 +58,7 @@ echo(str_replace($whatReplace, $replace, $paris)); //ka, kuo pakeisti ir is kur
 ?>
 
 
-<h1> ------- 6 Uzduotis ------- <h1/>
+<h3> ------- 6 Uzduotis ------- <h3/>
 
 <?php
 $american = "An American in Paris";
@@ -68,35 +68,72 @@ echo $letterCount;
 ?>
 
 
-<h1> ------- 7 Uzduotis ------- <h1/>
+<h3> ------- 7 Uzduotis ------- <h3/>
 
 <?php
+$title = "An American in Paris";
+$title2 = "Breakfast at Tiffany's";
+$title3 = "2001: A Space Odyssey";
+$title4 = "It's a Wonderful Life";
+$balses = array("A", "a", "E", "e", "I", "i", "O", "o", "U", "u", "Y", "y");
+$remove = "";
+echo(str_replace($balses, $remove, $title)) . '<br>';
+echo(str_replace($balses, $remove, $title2)) . '<br>';
+echo(str_replace($balses, $remove, $title3)) . '<br>';
+echo(str_replace($balses, $remove, $title4)) . '<br>';
+?>
+
+
+<h3> ------- 8 Uzduotis ------- <h3/>
+
+<?php
+$stringas ='Star Wars: Episode '.str_repeat(' ', rand(0,5)). rand(1,9) . ' - A New Hope';
+echo $stringas . '<br><br>';
+$stringas = str_ireplace("Star Wars: Episode ", "", $stringas);
+$stringas = str_ireplace(" - A New Hope", "", $stringas);
+echo $stringas . '<br>';
 
 ?>
 
 
-<h1> ------- 8 Uzduotis ------- <h1/>
+<h3> ------- 9 Uzduotis ------- <h3/>
 
 <?php
+$movie = "Don't Be a Menace to South Central While Drinking Your Juice in the Hood";
+$newString = explode(" ", $movie); //returns an array of string
+$count = 0;
+
+for ($i = 0; $i < count($newString); $i++) {
+    if(mb_strlen($newString[$i]) <= 5) {
+        $count++;
+    }
+}
+echo $count . '<br>';
+
+$movieName = "Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale";
+$newString2 = explode(" ", $movieName); //explode(separator, whatToSeperate)
+$count2 = 0;
+
+for ($i = 0; $i < count($newString2); $i++) {
+    if(mb_strlen($newString2[$i]) <= 5) {
+        $count2++;
+    }
+}
+echo $count2 . '<br>';
 
 ?>
 
 
-<h1> ------- 9 Uzduotis ------- <h1/>
+<h3> ------- 10 Uzduotis ------- <h3/>
 
 <?php
-
+$lotyniskosRaides = 'qwertyuiopasdfghjklzxcvbnm';
+$ilgis = strlen($lotyniskosRaides) - 1;
+echo $lotyniskosRaides[rand(0, $ilgis)] . $lotyniskosRaides[rand(0, $ilgis)] . $lotyniskosRaides[rand(0, $ilgis)];
 ?>
 
 
-<h1> ------- 10 Uzduotis ------- <h1/>
-
-<?php
-
-?>
-
-
-<h1> ------- 11 Uzduotis ------- <h1/>
+<h3> ------- 11 Uzduotis ------- <h3/>
 
 <?php
 
