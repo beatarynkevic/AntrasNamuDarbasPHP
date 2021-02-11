@@ -52,7 +52,7 @@ echo $naujasStringas . '<br>';
 
 <?php
 $paris = "An American in Paris";
-$whatReplace = array("a", "A");
+$whatReplace = ["a", "A"];
 $replace = "*";
 echo(str_replace($whatReplace, $replace, $paris)); //ka, kuo pakeisti ir is kur
 ?>
@@ -77,7 +77,7 @@ $title3 = "2001: A Space Odyssey";
 $title4 = "It's a Wonderful Life";
 $balses = array("A", "a", "E", "e", "I", "i", "O", "o", "U", "u", "Y", "y");
 $remove = "";
-echo(str_replace($balses, $remove, $title)) . '<br>';
+echo(str_replace($balses, $remove, $title)) . '<br>'; //str_ireplace ?
 echo(str_replace($balses, $remove, $title2)) . '<br>';
 echo(str_replace($balses, $remove, $title3)) . '<br>';
 echo(str_replace($balses, $remove, $title4)) . '<br>';
@@ -93,6 +93,20 @@ $stringas = str_ireplace("Star Wars: Episode ", "", $stringas);
 $stringas = str_ireplace(" - A New Hope", "", $stringas);
 echo $stringas . '<br>';
 
+preg_match("/([0-9]+)/", $stringas, $matches); //regex (Surasti ir atspausdinti epizodo numerį)
+echo $matches[1];
+echo '<br>';
+
+//3variantas
+echo 'III sprendimo variantas: ' . '<br>';
+for ($i = 1; $i <= 9; $i++) {
+    $temp = str_contains($stringas, $i);
+    if ($temp) {
+        echo "Episodas: $i";
+        break;
+    }
+}
+
 ?>
 
 
@@ -103,8 +117,8 @@ $movie = "Don't Be a Menace to South Central While Drinking Your Juice in the Ho
 $newString = explode(" ", $movie); //returns an array of string
 $count = 0;
 
-for ($i = 0; $i < count($newString); $i++) {
-    if(mb_strlen($newString[$i]) <= 5) {
+for ($i = 0; $i < count($newString); $i++) { //count all elements in array
+    if(mb_strlen($newString[$i]) <= 5) { //get string length and multi-byte character is counted as 1
         $count++;
     }
 }
@@ -130,11 +144,12 @@ echo $count2 . '<br>';
 $lotyniskosRaides = 'qwertyuiopasdfghjklzxcvbnm';
 $ilgis = strlen($lotyniskosRaides) - 1;
 echo $lotyniskosRaides[rand(0, $ilgis)] . $lotyniskosRaides[rand(0, $ilgis)] . $lotyniskosRaides[rand(0, $ilgis)];
-?>
+echo '<br>';
 
+$raides = str_shuffle($lotyniskosRaides); //keli kiti sprendimo budai
+echo substr($raides, -3);
+echo '<br>';
 
-<h3> ------- 11 Uzduotis ------- <h3/>
-
-<?php
+echo chr(rand(97, 122)) . chr(rand(97, 122)) . chr(rand(97, 122)); //viena eilute
 
 ?>
